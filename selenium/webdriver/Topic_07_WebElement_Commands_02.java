@@ -9,6 +9,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import javax.print.AttributeException;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
@@ -305,6 +306,7 @@ public class Topic_07_WebElement_Commands_02 {
         txtNewPassword.clear();
         txtEmail.sendKeys("phuongtnguyen@gmail.com");
         txtNewPassword.sendKeys("Auto@1234");
+        sleepInSecond(2);
         Assert.assertFalse(comple_lowercase.isDisplayed());
         Assert.assertFalse(comple_uppercase.isDisplayed());
         Assert.assertFalse(driver.findElement(By.xpath("//li[@class='number-char completed']")).isDisplayed());
@@ -314,7 +316,7 @@ public class Topic_07_WebElement_Commands_02 {
     }
     @AfterTest
     public void afterClass() {
-        driver.quit();
+       // driver.quit();
     }
     public void sleepInSecond(long timeInSecond)
     {
