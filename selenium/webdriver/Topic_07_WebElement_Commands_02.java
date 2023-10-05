@@ -241,6 +241,7 @@ public class Topic_07_WebElement_Commands_02 {
         // number
         txtEmail.sendKeys("phuongtnguyen@gmail.com");
         txtNewPassword.sendKeys("123");
+        sleepInSecond(2);
         Assert.assertTrue(incomple_lowercase.isDisplayed());
         Assert.assertTrue(incomple_uppercase.isDisplayed());
         Assert.assertTrue(driver.findElement(By.xpath("//li[@class='number-char completed']")).isDisplayed());
@@ -259,6 +260,7 @@ public class Topic_07_WebElement_Commands_02 {
         txtNewPassword.clear();
         txtEmail.sendKeys("phuongtnguyen@gmail.com");
         txtNewPassword.sendKeys("abc");
+        sleepInSecond(2);
         WebElement comple_lowercase = driver.findElement(By.xpath("//li[@class='lowercase-char completed']"));
         Assert.assertTrue(comple_lowercase.isDisplayed());
         Assert.assertTrue(incomple_uppercase.isDisplayed());
@@ -271,6 +273,7 @@ public class Topic_07_WebElement_Commands_02 {
         txtNewPassword.clear();
         txtEmail.sendKeys("phuongtnguyen@gmail.com");
         txtNewPassword.sendKeys("ABC");
+        sleepInSecond(2);
         WebElement comple_uppercase = driver.findElement(By.xpath("//li[@class='uppercase-char completed']"));
         Assert.assertTrue(incomple_lowercase.isDisplayed());
         Assert.assertTrue(comple_uppercase.isDisplayed());
@@ -316,7 +319,7 @@ public class Topic_07_WebElement_Commands_02 {
     }
     @AfterTest
     public void afterClass() {
-       // driver.quit();
+       driver.quit();
     }
     public void sleepInSecond(long timeInSecond)
     {
