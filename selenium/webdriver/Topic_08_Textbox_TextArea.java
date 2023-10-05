@@ -1,0 +1,62 @@
+package webdriver;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+import java.util.Random;
+import java.util.concurrent.TimeUnit;
+
+public class Topic_08_Textbox_TextArea {
+    WebDriver driver;
+
+    @BeforeClass
+    public void beforeClass() {
+
+        driver = new FirefoxDriver();
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().window().maximize();
+        driver.get("https://www.facebook.com/");
+    }
+
+    @Test
+    public void TC_01()
+    {
+
+    }
+
+    @Test
+    public void TC_02()
+    {
+
+       // String ContactInfo= driver.findElement("h");
+
+        // Register
+        // Log out
+        // Login
+
+        // Verify Account
+
+    }
+    @AfterTest
+    public void afterClass() {
+        driver.quit();
+    }
+
+    public void sleepInSecond(long timeInSecond)
+    {
+        try {
+            Thread.sleep(timeInSecond * 1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public String getEmailAddress()
+    {
+        Random rand = new Random();
+        String emailAddress = "Automation" + rand.nextInt(99999)+ "@gmail.com";
+        return emailAddress;
+    }
+}
